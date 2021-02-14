@@ -1,1 +1,1 @@
-# sysinfo-win10
+# sysinfo

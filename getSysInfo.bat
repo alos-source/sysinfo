@@ -1,9 +1,9 @@
-wmic computersystem get model,name,manufacturer,systemtype >./mySys.txt
-wmic bios get smbiosbiosversion>>./mySys.txt
-wmic bios get serialnumber>>./mySys.txt
+wmic computersystem get model,name,manufacturer,systemtype >%ComputerName%.txt
+wmic bios get smbiosbiosversion>>%ComputerName%.txt
+wmic bios get serialnumber>>%ComputerName%.txt
 
-wmic diskdrive get caption, status, serialnumber, Size >>./mySys.txt
-wmic os get version>>./mySys.txt
+wmic diskdrive get caption, status, serialnumber, Size >>%ComputerName%.txt
+wmic os get version>>%ComputerName%.txt
 
-wmic CPU get NumberOfCores,NumberOfLogicalProcessors>>./mySys.txt
-wmic memorychip get capacity>>./mySys.txt
+wmic CPU get NumberOfCores,NumberOfLogicalProcessors>>%ComputerName%.txt
+wmic memorychip get capacity>>%ComputerName%.txt

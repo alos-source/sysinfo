@@ -1,0 +1,4 @@
+# ignore runtime files
+*.log
+*.cfg
+*.txt

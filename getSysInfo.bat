@@ -7,3 +7,4 @@ wmic os get version>>%ComputerName%.txt
 
 wmic CPU get NumberOfCores,NumberOfLogicalProcessors>>%ComputerName%.txt
 wmic memorychip get capacity>>%ComputerName%.txt
+wmic nic get AdapterType, Name, Installed, MACAddress, PowerManagementSupported, Speed>>%ComputerName%.txt

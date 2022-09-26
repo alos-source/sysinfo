@@ -1,10 +1,13 @@
-wmic computersystem get model,name,manufacturer,systemtype >%ComputerName%.txt
-wmic bios get smbiosbiosversion>>%ComputerName%.txt
-wmic bios get serialnumber>>%ComputerName%.txt
+set myDat=%date:~6,4%-%date:~3,2%-%date:~0,2%
+set FILENAME=%ComputerName%_%myDat%.txt
 
-wmic diskdrive get caption, status, serialnumber, Size >>%ComputerName%.txt
-wmic os get version>>%ComputerName%.txt
+wmic computersystem get model,name,manufacturer,systemtype >%FILENAME%
+wmic bios get smbiosbiosversion>>%FILENAME%
+wmic bios get serialnumber>>%FILENAME%
 
-wmic CPU get NumberOfCores,NumberOfLogicalProcessors>>%ComputerName%.txt
-wmic memorychip get capacity>>%ComputerName%.txt
-wmic nic get AdapterType, Name, Installed, MACAddress, PowerManagementSupported, Speed>>%ComputerName%.txt
+wmic diskdrive get caption, status, serialnumber, Size >>%FILENAME%
+wmic os get version>>%FILENAME%
+
+wmic CPU get NumberOfCores,NumberOfLogicalProcessors>>%FILENAME%
+wmic memorychip get capacity>>%FILENAME%
+wmic nic get AdapterType, Name, Installed, MACAddress, PowerManagementSupported, Speed>>%FILENAME%

@@ -44,6 +44,11 @@ echo. >>%FILENAME%
 echo Network Adapter Information: >>%FILENAME%
 wmic nic get AdapterType, Name, Installed, MACAddress, PowerManagementSupported, Speed>>%FILENAME%
 
+REM Fügt eine Beschreibung für die Netzwerkadapter und Metrik Informationen hinzu
+echo. >>%FILENAME%
+echo Network Adapter Information Metrics: >>%FILENAME%
+powershell -Command "Get-NetIPInterface | Sort-Object InterfaceMetric | Format-Table -AutoSize">>%FILENAME%
+
 REM Fügt eine Beschreibung für die Domäneninformationen hinzu
 echo. >>%FILENAME%
 echo Computer Domain: >>%FILENAME%
